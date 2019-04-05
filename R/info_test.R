@@ -39,7 +39,7 @@ x_id <- rep(12:1, 3) # use this index for reordering the x ticks
 p1 <- ggplot(data = dat, aes(x = reorder(x, x_id), y = y1)) + geom_bar(stat = "identity", fill = "#552683") +
   coord_flip() + ylab("Y LABEL") + xlab("X LABEL") + facet_grid(. ~ grp) +
   ggtitle("TITLE OF THE FIGURE")
-p1 = p1 + kobe_theme()
+p1 = p1 + kobe_theme2()
 
 
 kobe_theme2 <- function() {
@@ -91,23 +91,23 @@ print(p1, vp = vplayout(4, 2))
 
 
 
-
+loadfonts()
 library(grid)
-pdf("output/infographics1.pdf", width = 10, height = 20)
+pdf("output/inforgraphics.pdf", width = 10, height = 20)
 grid.newpage() 
 pushViewport(viewport(layout = grid.layout(4, 3)))
 grid.rect(gp = gpar(fill = "#E2E2E3", col = "#E2E2E3"))
-grid.text("INFOGRAPHIC", y = unit(1, "npc"), x = unit(0.5, "npc"), vjust = 1, hjust = .5, gp = gpar(fontfamily = "Impact", col = "#A9A8A7", cex = 12, alpha = 0.3))
+grid.text("SARDEGNA", y = unit(1, "npc"), x = unit(0.5, "npc"), vjust = 1, hjust = .5, gp = gpar(fontfamily = "Impact", col = "#A9A8A7", cex = 12, alpha = 0.3))
 vplayout <- function(x, y) viewport(layout.pos.row = x, layout.pos.col = y)
 grid.text("Il Turismo in Sardegna", y = unit(0.94, "npc"), gp = gpar(fontfamily = "Impact", col = "#E7A922", cex = 6.4))
 #grid.text("ANNO 2018", vjust = 0, y = unit(0.92, "npc"), gp = gpar(fontfamily = "Impact", col = "#552683", cex = 0.8))
-grid.text("Servizio Sistemi Informativi", vjust = 5, y = unit(0.913, "npc"), gp = gpar(fontfamily = "Impact", col = "#552683", cex = 1))
+grid.text("Servizio Sistemi Informativi", vjust = 3, y = unit(0.913, "npc"), gp = gpar(fontfamily = "Impact", col = "#552683", cex = 1))
 grid.text("Assessorato del Turismo, Artigianato e Commercio", vjust = 0, y = unit(0.906, "npc"), gp = gpar(fontfamily = "Impact", col = "#552683", cex = 1.5))
 print(p3, vp = vplayout(4, 1:3))
 print(p1, vp = vplayout(3, 1:3))
 print(p2, vp = vplayout(2, 1:3))
 grid.rect(gp = gpar(fill = "#E7A922", col = "#E7A922"), x = unit(0.5, "npc"), y = unit(0.82, "npc"), width = unit(1, "npc"), height = unit(0.11, "npc"))
-grid.text("CATEGORY", y = unit(0.82, "npc"), x = unit(0.5, "npc"), vjust = .5, hjust = .5, gp = gpar(fontfamily = "Impact", col = "#CA8B01", cex = 13, alpha = 0.3))
+grid.text("SARDEGNA", y = unit(0.82, "npc"), x = unit(0.5, "npc"), vjust = .5, hjust = .5, gp = gpar(fontfamily = "Impact", col = "#CA8B01", cex = 13, alpha = 0.3))
 grid.text("A VERY VERY VERY VERY LONG TITLE", vjust = 0, hjust = 0, x = unit(0.01, "npc"), y = unit(0.88, "npc"), gp = gpar(fontfamily = "Impact", col = "#552683", cex = 1.2))
 grid.text("DATA INFO", vjust = 0, hjust = 0, x = unit(0.01, "npc"), y = unit(0.86, "npc"), gp = gpar(fontfamily = "Impact", col = "white", cex = 1.2))
 grid.text(paste(
@@ -122,7 +122,7 @@ dev.off()
 
 
 # Generate Infographic in PNG Format
-png("output/inforgraphics1.png", width = 10, height = 20, units = "in", res = 500)
+png("output/inforgraphics.png", width = 10, height = 20, units = "in", res = 500)
 grid.newpage() 
 pushViewport(viewport(layout = grid.layout(4, 3)))
 grid.rect(gp = gpar(fill = "#E2E2E3", col = "#E2E2E3"))
